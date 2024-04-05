@@ -1,4 +1,4 @@
-# Exercise: Day2_session06_mutating_exercise_1_achv.R
+# Exercise: Day2_session07_mutating_exercise_1_achv.R
 
 
 # SETUP -------------------------------------------------------------------
