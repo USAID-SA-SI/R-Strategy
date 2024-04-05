@@ -20,6 +20,7 @@
 # EXERCISE ----------------------------------------------------------------
 
   # What do each quarters’ index testing results look like in Alfred Nzo in FY23?
+  # what about cumulative?
   # Use filter() and summarize() with across()
   
   df_index %>% 
@@ -29,5 +30,11 @@
                      \(x) sum(x, na.rm = TRUE)),
               .groups = "drop")
   
+  df_index %>% 
+    filter(psnu == "ec Alfred Nzo District Municipality") %>% #what PSNU to filter to? what else?
+    group_by(psnu, indicator, fiscal_year) %>% #what vars to group by
+    summarize(across(starts_with("qtr"), # what variable to sum on if we are looking at results? 
+                     \(x) sum(x, na.rm = TRUE)),
+              .groups = "drop")
 
   
