@@ -12,18 +12,18 @@
     read_psd()
   
   # Set core data frame for exercises and examples
-  df_tst_psnu <- df_msd %>%
+  df_tst_snu <- df_msd %>%
     filter(indicator == "HTS_TST_POS",
            standardizeddisaggregate == "Total Numerator") %>%
     summarize(
       cumulative = sum(cumulative, na.rm = T),
-      .by = c("fiscal_year", "indicator", "psnu")
+      .by = c("fiscal_year", "indicator", "snu1")
     ) %>%
     mutate(fy = as.character(fiscal_year)) %>% 
-    arrange(psnu)
+    arrange(snu1)
   
-  glimpse(df_tst_psnu)
-  names(df_tst_psnu)
+  glimpse(df_tst_snu)
+  names(df_tst_snu)
 
 # EXERCISE ----------------------------------------------------------------
 
@@ -35,21 +35,21 @@
   
   # Starter columns
   # provide columns for the aesthetic mapping below
-  df_tst_psnu %>%
+  df_tst_snu %>%
     ggplot(mapping = aes(x = fy, y = cumulative, fill = "...")) +
     geom_col()
   
   
   # Starter points
   # provide columns for the aesthetic mapping below
-  df_tst_psnu %>%
+  df_tst_snu %>%
     ggplot(aes(x = "...", y = "...", size = "..." , color = "...", shape = "...")) +
     geom_point()
   
   
   # Starter lines
   # provide columns for the aesthetic mapping below
-  df_tst_psnu %>%
+  df_tst_snu %>%
     ggplot(aes(x = "...", y = "...", size = "...", color = "...")) +
     geom_line()
   
