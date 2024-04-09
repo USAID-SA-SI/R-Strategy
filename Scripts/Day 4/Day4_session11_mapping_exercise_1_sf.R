@@ -51,10 +51,6 @@ remotes::install_github("USAID-OHA-SI/gisr", build_vignettes = TRUE)
 
     df_psnu_tst_geo <- psnu_sf %>% 
       left_join(., "...")
-  
-  
-  df_psnu_tst_geo <- psnu_sf %>% 
-    left_join(df_tst_psnu)
 
   # Try making map of the testing targets
     df_psnu_tst_geo %>% 
